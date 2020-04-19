@@ -7,29 +7,6 @@
     android:background="#202732"
     tools:context="login">
 
-    <Button
-        android:id="@+id/continuar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:background="@drawable/boton_seguir50"
-        android:text="Continuar Sin Cuenta"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:layout_editor_absoluteX="32dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/boton_registro"
-        android:text="Registrarce"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
@@ -54,7 +31,9 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/colorAccent"
         android:ems="10"
-        android:hint="Email"
+        android:hint="Correo"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/white"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -70,7 +49,9 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/colorAccent"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Contraseña"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/white"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,10 +65,42 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/botones_redondos"
-        android:text="Login"
+        android:text="Ingresar"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/botones_redondos"
+        android:text="Registrarse"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <Button
+        android:id="@+id/continuar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/boton_seguir50"
+        android:text="Continuar Sin Cuenta"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
