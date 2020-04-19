@@ -16,7 +16,7 @@
         android:onClick="btnEscanear"
         android:textColor="@android:color/white"
         android:background="@drawable/botones_redondos"
-        android:text="Escanear direccion QR"
+        android:text="Escanear dirección QR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
