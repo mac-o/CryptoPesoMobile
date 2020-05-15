@@ -1,8 +1,12 @@
 package com.example.cryptopesomobile20;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.biometrics.BiometricPrompt;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.CancellationSignal;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,6 +23,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 
 public class login extends Activity {
@@ -38,6 +46,7 @@ public class login extends Activity {
     TextView contboton;
     TextView huellaboton;
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +98,46 @@ public class login extends Activity {
             public void onClick(View view) {
                 Intent i2 = new Intent(login.this, biometrics.class);
                 startActivity(i2);
+            }
+        });
+
+        final Executor executor = Executors.newSingleThreadExecutor();
+
+        final BiometricPrompt biometricPrompt = new BiometricPrompt.Builder(this)
+                .setTitle("Ingreasa tu Huella")
+                .setSubtitle("CryptoPeso")
+                .setDescription("Usar tu huella te brinda más seguridad a la hora de realizar transacciones.")
+                .setNegativeButton("Cancel", executor, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).build();
+
+        Button huella = findViewById(R.id.biometrics);
+
+        final login activity = this;
+
+        huella.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                biometricPrompt.authenticate(new CancellationSignal(), executor, new BiometricPrompt.AuthenticationCallback() {
+                    @Override
+                    public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
+                        super.onAuthenticationSucceeded(result);
+
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                Toast.makeText(login.this, "Verificado", Toast.LENGTH_LONG).show();
+
+                                Intent i3 = new Intent(login.this, MainActivity.class);
+                                startActivity(i3);
+                            }
+                        });
+                    }
+                });
             }
         });
     }
