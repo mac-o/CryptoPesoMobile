@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "341286418451",
+    "firebase_url": "https://cryptopeso-e9ee0.firebaseio.com",
+    "project_id": "cryptopeso-e9ee0",
+    "storage_bucket": "cryptopeso-e9ee0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341286418451:android:3741893e8c9b5fabb367e6",
+        "android_client_info": {
+          "package_name": "com.example.cryptopesomobile20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341286418451-gapurs1f4s6sm02r7689d21dua31n36p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cryptopesomobile20",
+            "certificate_hash": "e78c19d866097966017448fb7c97a263f374a718"
+          }
+        },
+        {
+          "client_id": "341286418451-ej9ohsllvsnl6sres1ac76vqjsvho0sh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMQHp4wbFzOqkWOqWCuufRHLGnetjnOBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341286418451-ej9ohsllvsnl6sres1ac76vqjsvho0sh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
