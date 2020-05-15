@@ -1,6 +1,7 @@
 package com.example.cryptopesomobile20;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.biometrics.BiometricPrompt;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class biometrics extends AppCompatActivity {
-    
+
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class biometrics extends AppCompatActivity {
                             public void run() {
 
                                 Toast.makeText(biometrics.this, "Verificado", Toast.LENGTH_LONG).show();
+
+                                Intent i3 = new Intent(biometrics.this, MainActivity.class);
+                                startActivity(i3);
                             }
                         });
                     }
